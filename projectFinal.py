@@ -124,10 +124,7 @@ plt.legend()
 plt.show()
 
 print('-------------------------------------------')
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score, classification_report
+
 
 # Učitavanje podataka
 data2 = pd.read_csv('data\\test.csv')
@@ -164,7 +161,6 @@ plt.title('Zavisnost Heart Disease od Resting Blood Pressure')
 plt.legend()
 plt.show()
 
-import pandas as pd
 
 # Učitavanje podataka
 data4 = pd.read_csv('data\\test.csv')
@@ -190,7 +186,6 @@ for column in categorical_columns:
 
 # Prikazivanje rezultata
 print(data.head())
-from sklearn.linear_model import LogisticRegression
 
 # Odvajanje ciljne promenljive od atributa
 X = data.drop('HeartDisease', axis=1)
@@ -240,9 +235,6 @@ x_train4, x_val4, y_train4, y_val4 = train_test_split(x4, y4, train_size=0.8, sh
 logistic_model = LogisticRegression(max_iter = 1000, random_state=42)
 logistic_model.fit(x_train4, y_train4)
 
-# Assess assumptions (if applicable)
-# Note: Logistic regression has its own assumptions, different from linear regression.
-# Make sure your 'are_assumptions_satisfied' function is suitable for logistic regression.
 
 val_predictions2 = logistic_model.predict(x_val4)
 
